@@ -1,0 +1,10 @@
+image: gitpod/workspace-full
+  
+tasks:
+  - init: docker-compose build
+    command: docker-compose up
+
+ports:
+  - port: 8888
+    visibility: private
+    onOpen: open-browser

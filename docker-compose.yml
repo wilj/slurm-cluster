@@ -1,0 +1,45 @@
+services:
+  slurmjupyter:
+    build: ./jupyter
+    hostname: slurmjupyter
+    user: admin
+    volumes:
+      - shared-vol:/home/admin
+    ports:
+      - 8888:8888
+  slurmmaster:
+    build: ./master
+    hostname: slurmmaster
+    user: admin
+    volumes:
+      - shared-vol:/home/admin
+    ports:
+      - 6817:6817
+      - 6818:6818
+      - 6819:6819
+  slurmnode1:
+    build: ./node
+    hostname: slurmnode1
+    user: admin
+    volumes:
+      - shared-vol:/home/admin
+    links:
+      - slurmmaster
+  slurmnode2:
+    build: ./node
+    hostname: slurmnode2
+    user: admin
+    volumes:
+      - shared-vol:/home/admin
+    links:
+      - slurmmaster
+  slurmnode3:
+    build: ./node
+    hostname: slurmnode3
+    user: admin
+    volumes:
+      - shared-vol:/home/admin
+    links:
+      - slurmmaster
+volumes:
+  shared-vol:

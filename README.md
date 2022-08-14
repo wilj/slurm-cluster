@@ -7,18 +7,18 @@ https://medium.com/analytics-vidhya/slurm-cluster-with-docker-9f242deee601
 
 To run slurm cluster environment you must execute:
 
-     $ docker-compose -f docker-compose-jupyter.yml up -d
+     $ docker-compose up -d
 
 To stop it, you must:
 
-     $ docker-compose -f docker-compose-jupyter.yml stop
+     $ docker-compose stop
 
 To check logs:
 
-     $ docker-compose -f docker-compose-jupyter.yml logs -f
+     $ docker-compose logs -f
 
      (stop logs with CTRL-c")
 
 To check running containers:
 
-     $ docker-compose -f docker-compose-jupyter.yml ps
+     $ docker-compose ps
