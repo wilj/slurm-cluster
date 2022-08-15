@@ -5,6 +5,7 @@ services:
     user: admin
     volumes:
       - shared-vol:/home/admin
+      - ./:/tmp/src
     ports:
       - 8888:8888
   slurmmaster:
