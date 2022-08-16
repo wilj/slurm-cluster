@@ -8,6 +8,8 @@ RUN apt install sudo -y && apt install python3.9 python3-pip -y && useradd -m ad
 
 RUN apt update -y && apt install libopenmpi-dev -y && pip3 install mpi4py
 
+RUN apt-get update && apt-get install -y xtail
+
 COPY slurm.conf /etc/slurm-llnl/
 COPY cgroup.conf /etc/slurm-llnl/
 COPY docker-entrypoint.sh /etc/slurm-llnl/
