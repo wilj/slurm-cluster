@@ -18,6 +18,9 @@ services:
       - 6817:6817
       - 6818:6818
       - 6819:6819
+    environment:
+      - SLURMD_OPTIONS=$SLURMD_OPTIONS
+      - SLURMCTLD_OPTIONS=$SLURMCTLD_OPTIONS
   slurmnode1:
     build: ./node
     hostname: slurmnode1
@@ -26,6 +29,9 @@ services:
       - shared-vol:/home/admin
     links:
       - slurmmaster
+    environment:
+      - SLURMD_OPTIONS=$SLURMD_OPTIONS
+      - SLURMCTLD_OPTIONS=$SLURMCTLD_OPTIONS
   slurmnode2:
     build: ./node
     hostname: slurmnode2
@@ -34,6 +40,9 @@ services:
       - shared-vol:/home/admin
     links:
       - slurmmaster
+    environment:
+      - SLURMD_OPTIONS=$SLURMD_OPTIONS
+      - SLURMCTLD_OPTIONS=$SLURMCTLD_OPTIONS
   slurmnode3:
     build: ./node
     hostname: slurmnode3
@@ -42,5 +51,8 @@ services:
       - shared-vol:/home/admin
     links:
       - slurmmaster
+    environment:
+      - SLURMD_OPTIONS=$SLURMD_OPTIONS
+      - SLURMCTLD_OPTIONS=$SLURMCTLD_OPTIONS
 volumes:
   shared-vol:

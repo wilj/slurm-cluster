@@ -5,7 +5,7 @@ echo "
 -------------------------------------------------------------------------------
 "
 
-echo "Prolog: $(basename $0)"
+echo "Prolog: $(basename $0)" | sudo tee -a /tmp/slurmdebug.log
 env
 
 echo "

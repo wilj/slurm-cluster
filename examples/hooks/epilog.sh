@@ -5,7 +5,7 @@ echo "
 -------------------------------------------------------------------------------
 "
 
-echo "Epilog: $(basename $0)"
+echo "Epilog: $(basename $0)" | sudo tee -a /tmp/slurmdebug.log
 env
 
 echo "
