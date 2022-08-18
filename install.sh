@@ -11,10 +11,10 @@ do
 done
 
 
-UID=$(id -u)
+UID=$(id -u) 
 GID=$(id -g)
 
-export UID GID
+envsubst < template.env > .env
 
 docker-compose build baseimage
 docker-compose build

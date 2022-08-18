@@ -9,6 +9,7 @@ RUN export DEBIAN_FRONTEND='noninteractive' \
         build-essential \
         ca-certificates \
         dirmngr \
+        gettext \
         lsb-release \
         munge \
         netcat \
