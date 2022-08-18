@@ -2,3 +2,4 @@ venv3.9
 *.log
 *.out
 munge.key
+.env
