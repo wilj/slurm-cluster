@@ -15,6 +15,7 @@ RUN export DEBIAN_FRONTEND='noninteractive' \
         netcat \
         slurm-client \
         sview \
+        systemd \
         tldr \
     && rm -rf /var/lib/apt/lists/*
 
