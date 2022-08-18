@@ -1,4 +1,7 @@
 services:
+  baseimage:
+    build: ./baseimage
+    image: wilj.net/slurm/baseimage
   slurmjupyter:
     build: ./jupyter
     hostname: slurmjupyter
@@ -54,5 +57,7 @@ services:
     environment:
       - SLURMD_OPTIONS=$SLURMD_OPTIONS
       - SLURMCTLD_OPTIONS=$SLURMCTLD_OPTIONS
+  echo:
+    build: ./echo
 volumes:
   shared-vol:

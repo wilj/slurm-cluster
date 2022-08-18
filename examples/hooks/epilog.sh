@@ -1,13 +1,10 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-echo "
--------------------------------------------------------------------------------
-"
+. $(dirname $(realpath $0))/lib.sh
 
-echo "Epilog: $(basename $0)" | sudo tee -a /tmp/slurmdebug.log
-env
 
-echo "
--------------------------------------------------------------------------------
+httpEcho "
+$(basename $0) 
+$(env)
 "
