@@ -2,21 +2,22 @@ services:
   baseimage:
     build: ./baseimage
     image: wilj.net/slurm/baseimage
+    user: "${UID}:${GID}"
   slurmjupyter:
     build: ./jupyter
     hostname: slurmjupyter
-    user: admin
+    user: "${UID}:${GID}"
     volumes:
-      - shared-vol:/home/admin
+      - shared-vol:/home/gitpod
       - ./:/tmp/src
     ports:
       - 8888:8888
   slurmmaster:
     build: ./master
     hostname: slurmmaster
-    user: admin
+    user: "${UID}:${GID}"
     volumes:
-      - shared-vol:/home/admin
+      - shared-vol:/home/gitpod
     ports:
       - 6817:6817
       - 6818:6818
@@ -27,9 +28,9 @@ services:
   slurmnode1:
     build: ./node
     hostname: slurmnode1
-    user: admin
+    user: "${UID}:${GID}"
     volumes:
-      - shared-vol:/home/admin
+      - shared-vol:/home/gitpod
     links:
       - slurmmaster
     environment:
@@ -38,9 +39,9 @@ services:
   slurmnode2:
     build: ./node
     hostname: slurmnode2
-    user: admin
+    user: "${UID}:${GID}"
     volumes:
-      - shared-vol:/home/admin
+      - shared-vol:/home/gitpod
     links:
       - slurmmaster
     environment:
@@ -49,9 +50,9 @@ services:
   slurmnode3:
     build: ./node
     hostname: slurmnode3
-    user: admin
+    user: "${UID}:${GID}"
     volumes:
-      - shared-vol:/home/admin
+      - shared-vol:/home/gitpod
     links:
       - slurmmaster
     environment:

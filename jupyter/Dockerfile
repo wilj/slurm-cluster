@@ -24,12 +24,14 @@ RUN npm install -g configurable-http-proxy && pip3 install jupyterlab==2.1.2
 COPY slurm.conf /etc/slurm-llnl/
 COPY cgroup.conf /etc/slurm-llnl/
 COPY docker-entrypoint.sh /etc/slurm-llnl/
+COPY munge.key /etc/munge/
+RUN chown munge:munge /etc/munge/munge.key && chmod 400 /etc/munge/munge.key
 
-WORKDIR /home/admin
+WORKDIR /home/gitpod
 
 EXPOSE 8888
 
-ENV USER admin
+ENV USER gitpod
 ENV SHELL bash
 
 RUN pip3 install jupyterlab_slurm

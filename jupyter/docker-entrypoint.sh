@@ -1,7 +1,7 @@
 #!/bin/bash
 
-cp -R /tmp/src/examples /home/admin
-sudo chown -r admin:admin /home/admin
+cp -R /tmp/src/examples /home/gitpod
+sudo chown -r gitpod:gitpod /home/gitpod
 
 sudo service munge start
 

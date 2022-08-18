@@ -19,7 +19,7 @@ RUN apt-get update \
 
 RUN pip3 install mpi4py
 
-RUN useradd -m admin -s /usr/bin/bash -d /home/admin \
-    && echo "admin:admin" | chpasswd \
-    && adduser admin sudo \
-    && echo "admin     ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
+RUN useradd -m gitpod -s /usr/bin/bash -d /home/gitpod \
+    && echo "gitpod:gitpod" | chpasswd \
+    && adduser gitpod sudo \
+    && echo "gitpod     ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
