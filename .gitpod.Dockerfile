@@ -18,9 +18,8 @@ RUN export DEBIAN_FRONTEND='noninteractive' \
         tldr \
     && rm -rf /var/lib/apt/lists/*
 
-COPY jupyter/slurm.conf /etc/slurm-llnl/
+COPY .gitpod.slurm.conf /etc/slurm-llnl/
 COPY jupyter/cgroup.conf /etc/slurm-llnl/
-COPY jupyter/docker-entrypoint.sh /etc/slurm-llnl/
 
 USER gitpod
 

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 cp -R /tmp/src/examples /home/gitpod
-sudo chown -r gitpod:gitpod /home/gitpod
+sudo chown -R gitpod:gitpod /home/gitpod
 
 sudo service munge start
 
