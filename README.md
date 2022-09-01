@@ -1,7 +1,15 @@
 # slurm-cluster
 Docker local slurm cluster
 
-Created by: Rodrigo Ancavil del Pino
+To open in Gitpod:
+
+https://gitpod.io/#https://github.com/wilj/slurm-cluster
+
+This project has been modified to run in Gitpod, so the instructions below may not work correctly.
+
+---
+
+Originally created by: Rodrigo Ancavil del Pino
 
 https://medium.com/analytics-vidhya/slurm-cluster-with-docker-9f242deee601
 
